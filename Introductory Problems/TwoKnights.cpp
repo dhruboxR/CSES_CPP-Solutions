@@ -14,8 +14,10 @@ int32_t main() {
         int N = i*i; 
         int res = ((N * (N-1)) / 2 );
 
-        // if( i > 2) res -= 
-        cout << res << endl;
+        int attackPos = 2 * (i-1) * (i-2);
+        attackPos += 2 * (i-1) * (i-2);
+
+        cout << res - attackPos << endl;
     }
 
     return 0;
