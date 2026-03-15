@@ -16,12 +16,16 @@ int32_t main() {
 }
 
 /*
-    For a trailing zero we need to multiply with 10 
-        10 -> 2 * 5
-        So we need to pair(2, 5) for a trailing zero
+    For a trailing zero, the number must contain a factor of 10.
+        { 10 = 2 × 5 } : So each pair (2, 5) produces one trailing zero.
 
-        Every even number is a multiple of 2, So we consider only the multiples of 5 
+    In factorials, multiples of 2 : (every even number has a factor of 2).
+    
+    -> So the number of 5s actually limits how many (2,5) pairs we can make.
+    -> Therefore, we only count multiples of 5.
 
-        5 -> contributes one 5 paired with 2 gives -> 10 [ 1 trailing zero ]
-        25 -> contributes two 5 paired with 4 gives -> 100 [ 2 trailing zeros ]
+    #   5 → contributes one 5 → forms 1 pair (2×5) → 1 trailing zero
+    #   25 = 5² → contributes two 5s → forms 2 pairs → 2 trailing zeros
+    
+    So higher powers of 5 contribute extra trailing zeros.
 */
